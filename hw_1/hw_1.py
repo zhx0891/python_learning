@@ -22,3 +22,10 @@
 # if x < 0 and y < 0: print("третья четверть")
 # if x > 0 and y < 0: print("четвёртая четверть")
 
+
+print("введите номер четверти")
+num_quarter = int(input())
+if num_quarter == 1: print("x > 0 and y > 0")
+if num_quarter == 2: print("x < 0 and y > 0")
+if num_quarter == 3: print("x < 0 and y < 0")
+if num_quarter == 4: print("x > 0 and y < 0")
