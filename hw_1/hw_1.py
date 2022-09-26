@@ -32,13 +32,22 @@ import math
 
 # Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
 # d^2= (х2— х1)^2+ (y2— y1)^2.
-point_a = [0, 0]
-point_b = [3, 4]
-print("введите  координату Х для точки А")
-point_a[0] = int(input())
-print("введите  координату Y для точки А")
-point_a[1] = int(input())
-len_line = math.isqrt((point_b[0]-point_a[0]) ** 2 + (point_b[1]-point_a[1]) ** 2)
+# point_a = [0, 0]
+# point_b = [3, 4]
+# print("введите  координату Х для точки А")
+# point_a[0] = int(input())
+# print("введите  координату Y для точки А")
+# point_a[1] = int(input())
+# len_line = math.isqrt((point_b[0]-point_a[0]) ** 2 + (point_b[1]-point_a[1]) ** 2)
+#
+# print(len_line)
 
-print(len_line)
+check_true = True
+meaning_predicats = [1, 0, 0]
+x = meaning_predicats[0]
+y = meaning_predicats[1]
+z = meaning_predicats[2]
+
+check_true=(not(x or y or z)) == ((not x) and (not y) and (not z))
+print(f'при x = {x}  y =  {y}  z = {z}  выражение = {check_true} ')
 
