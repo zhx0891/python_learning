@@ -6,20 +6,22 @@ def first_task():
     num = input('? ')
     sum_ = 0
     for i in num:
+        # if i.isnumeric(): # не понял почему не сработало, рассчитывал что она пропустит точку
+        #     sum_ += i
        try:
            tmp = int(i)
            sum_ = sum_ + tmp
        except:
-           print()
+           sum_ += 0
+
     return sum_
 
 
 #  Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N
 
 
-
 def second_task(N):
-    sequ =[]
+    sequ = []
     tmp = 1
     for i in range(1, N+1):
         tmp = tmp * i
@@ -27,7 +29,6 @@ def second_task(N):
     return sequ
 
 # Задайте список из n чисел последовательности (1+1/n)^n и выведите на экран их сумму, округлённую до трёх знаков после точки.
-
 
 def third_task(n):
     ind = 0
@@ -52,7 +53,27 @@ def fourth_task():
 
     return sequence[a] * sequence[b]
 
-print(first_task())
+
+# Реализуйте алгоритм перемешивания списка.
+
+
+def fifth_task():
+    list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    for i in range(len(list_)-1):
+        tmp = list_[i]
+        ind = randint(0, len(list_)-1)
+        list_[i] = list_[ind]
+        list_[ind] = tmp
+
+    print(list_)
+
+
+
+
+
+
+# print(first_task())
 # print(second_task(4))
 # print(third_task(6))
 # print(fourth_task())
+fifth_task()
