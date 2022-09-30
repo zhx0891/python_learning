@@ -1,6 +1,23 @@
 from random import randint
-# def sum_of_digit(n):
+
+# Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
+
+def first_task():
+    num = input('? ')
+    sum_ = 0
+    for i in num:
+       try:
+           tmp = int(i)
+           sum_ = sum_ + tmp
+       except:
+           print()
+    return sum_
+
+
 #  Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N
+
+
+
 def second_task(N):
     sequ =[]
     tmp = 1
@@ -24,7 +41,10 @@ def third_task(n):
 # Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на позициях a и b. Значения N, a и b вводит пользователь с клавиатуры.
 
 
-def fourth_task(N, a, b):
+def fourth_task():
+    N = int(input('N?'))
+    a = int(input('a?'))
+    b = int(input('b?'))
     if b == N: b -= 1
     sequence = []
     for i in range(N):
@@ -32,10 +52,7 @@ def fourth_task(N, a, b):
 
     return sequence[a] * sequence[b]
 
-
+print(first_task())
 # print(second_task(4))
 # print(third_task(6))
-# N = int(input('N?'))
-# a = int(input('a?'))
-# b = int(input('b?'))
-# print(fourth_task(N, a, b))
+# print(fourth_task())
