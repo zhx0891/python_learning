@@ -61,7 +61,7 @@ def fifth_task():
     list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     for i in range(len(list_)-1):
         tmp = list_[i]
-        ind = randint(0, len(list_)-1)
+        ind = randint(i+1, len(list_)-1)
         list_[i] = list_[ind]
         list_[ind] = tmp
 

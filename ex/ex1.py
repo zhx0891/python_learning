@@ -1,11 +1,11 @@
 # Напишите программу, которая принимает на вход число и показывает сумму его цифр.
-print('?')
-num = int(input())
-sum = 0
-while (num > 0):
-    sum = sum + num % 10
-    num //= 10
-print(sum)
+# print('?')
+# num = int(input())
+# sum = 0
+# while (num > 0):
+#     sum = sum + num % 10
+#     num //= 10
+# print(sum)
 
 # Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 
@@ -38,5 +38,35 @@ print(sum)
 #
 #
 # show_sequence(5)
-#
 
+# программа находит количество заданных последовательностей в строке
+
+def count_sequence(list_, sequence):
+
+    count = 0
+    ind = 0
+    for i in list_:
+        if list_[ind] == sequence[0]:
+            j = 1
+
+            while j != len(sequence):
+                if ind <= (len(list_) - len(sequence)):
+                    if list_[ind + j] == sequence[j]:
+
+                        j += 1
+                        if j == len(sequence):
+                            count += 1
+                            break
+                    else:
+                        break
+                else:
+                    break
+        ind += 1
+
+    print(count)
+
+def count_sequence_two(str1, str2):
+    print(len(str1.split(str2))-1)
+
+
+count_sequence_two("weretriyrityrerere", "ere")
