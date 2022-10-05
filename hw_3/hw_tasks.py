@@ -8,3 +8,20 @@ def first_task():
         sum = sum + this_list[i]
 
     print(sum)
+
+
+# Напишите программу, которая найдёт произведение пар чисел списка.
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+
+def second_task():
+    sec_list = [12, 34, 56, 78, 90, 98, 76, 54, 32, 1]
+    half = int(len(sec_list) / 2)  # не понял почему  он решил что список флоат, подставил дружеский костылёк
+    print(half)
+    # for i in range(len(sec_list) / 2):
+    for i in range(half):
+        print(f' {sec_list[i]} + {sec_list[(len(sec_list) - 1) - i]} = {sec_list[i] + sec_list[(len(sec_list) - 1) - i]}')
+
+
+
+
