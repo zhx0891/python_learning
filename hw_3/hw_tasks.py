@@ -20,7 +20,7 @@ def second_task():
     print(half)
     # for i in range(len(sec_list) / 2):
     for i in range(half):
-        print(f' {sec_list[i]} + {sec_list[(len(sec_list) - 1) - i]} = {sec_list[i] + sec_list[(len(sec_list) - 1) - i]}')
+        print(f' {sec_list[i]} * {sec_list[(len(sec_list) - 1) - i]} = {sec_list[i] * sec_list[(len(sec_list) - 1) - i]}')
 
 
 
