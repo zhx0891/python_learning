@@ -22,6 +22,34 @@ def second_task():
     for i in range(half):
         print(f' {sec_list[i]} * {sec_list[(len(sec_list) - 1) - i]} = {sec_list[i] * sec_list[(len(sec_list) - 1) - i]}')
 
+# Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между
+# максимальным и минимальным значением дробной части элементов.
+
+
+def third_task():
+    third_list = [12.5, 34.09, 56.75, 78.28, 90.61, 98.4, 76.5, 54.9, 32.21, 1.81]
+    min = 0
+    max = 0
+
+    for i in third_list:
+        r = False
+        i_str = str(i)
+        i_str_spl = i_str.split('.')
+        zero_ahead = i_str_spl[1].split()
+
+        if (r):
+            print(f'i_str = {float(i_str)}  i_str_spl = {float(i_str_spl[0])}')
+            i_float = float(i_str) - float(i_str_spl[0])
+        else:
+            i_float = float(i_str_spl[1])
+
+        # print(i_float)
+    #     if i_float > max:
+    #         max = i_float
+    #     if i_float < min:
+    #         min = i_float
+    #
+    # print(f'max = {max}  min = {min} ')
 
 
 
