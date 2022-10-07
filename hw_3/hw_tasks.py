@@ -56,25 +56,33 @@ def fourth_task(num):
 
     binum.append(num % 2)
     binum.append(num // 2)
-    
+
     for i in range(len(binum), 0, -1):
         print(binum[i-1], end='')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 
+def fifth_task(n):
+    num = []
+
+    for i in range(n + 1):
+        if i == 0:
+            num.append(i)
+            # print(num)
+
+        if i == 1:
+            num.append(i)
+            # print(num)
+        if i > 1:
+            num.append(num[i-1] + num[i-2])
+            # print(num)
+
+    print(num, end=', ')
+
+
+
+    # print(num)
 
 
 
