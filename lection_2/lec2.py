@@ -99,6 +99,9 @@
 # Семинар
 
 # print(dir(str))
+# cp = [0]
+# for x in range(10):
+# 	cp.insert(0, x)
+# print(cp)	
 
-for x in range(10, 0, -1):
-	print(x, end ='')
+print (1 % 2)

@@ -69,20 +69,34 @@ def fifth_task(n):
     for i in range(n + 1):
         if i == 0:
             num.append(i)
-            # print(num)
-
         if i == 1:
             num.append(i)
-            # print(num)
         if i > 1:
             num.append(num[i-1] + num[i-2])
-            # print(num)
-
-    print(num, end=', ')
 
 
+    nega_num = []
+    for i in range(n + 1):
+        if i == 0:
+            nega_num.insert(0, i)
+        if i == 1:
+            nega_num.insert(0, i)
+        if i > 1:
+            nega_num.insert(0, (-1) ** (i+1) * num[i])
 
-    # print(num)
+
+    for i in range(n + 1):
+        if i != 0:
+            nega_num.append(num[i])
+
+    print(nega_num)
+
+
+
+
+
+
+
 
 
 
