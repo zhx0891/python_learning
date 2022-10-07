@@ -49,14 +49,19 @@ def third_task():
 def fourth_task(num):
     binum = []
     count = 0
-    while (num % 2) > 1:
-        binum.append()
-        binum[count] = num % 2
-        count += 1
+
+    while (num > 2):
+        binum.append(num % 2)
         num = num // 2
 
+    binum.append(num % 2)
+    binum.append(num // 2)
+    
+    for i in range(len(binum), 0, -1):
+        print(binum[i-1], end='')
 
-    print(num % 2)
+
+
 
 
 
