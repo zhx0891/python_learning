@@ -16,7 +16,7 @@ def first_task():
 
 def second_task():
     sec_list = [12, 34, 56, 78, 90, 98, 76, 54, 32, 1]
-    half = int(len(sec_list) / 2)  # не понял почему  он решил что список флоат, подставил дружеский костылёк
+    half = int(len(sec_list) / 2)
     print(half)
     # for i in range(len(sec_list) / 2):
     for i in range(half):
@@ -28,28 +28,19 @@ def second_task():
 
 def third_task():
     third_list = [12.5, 34.09, 56.75, 78.28, 90.61, 98.4, 76.5, 54.9, 32.21, 1.81]
-    min = 0
+    min = third_list[0]
     max = 0
 
     for i in third_list:
-        r = False
         i_str = str(i)
         i_str_spl = i_str.split('.')
-        zero_ahead = i_str_spl[1].split()
+        i_float = float(i) - float(i_str_spl[0])
+        if i_float > max:
+            max = i_float
+        if i_float < min:
+            min = i_float
 
-        if (r):
-            print(f'i_str = {float(i_str)}  i_str_spl = {float(i_str_spl[0])}')
-            i_float = float(i_str) - float(i_str_spl[0])
-        else:
-            i_float = float(i_str_spl[1])
-
-        # print(i_float)
-    #     if i_float > max:
-    #         max = i_float
-    #     if i_float < min:
-    #         min = i_float
-    #
-    # print(f'max = {max}  min = {min} ')
+    print(f'max = {round(max, 2)}  min = {round(min, 2)} разница равна {round(max - min, 3)} ')
 
 
 
@@ -57,13 +48,15 @@ def third_task():
 
 def fourth_task(num):
     binum = []
-    while ((num % 2) != 1) or ((num % 2) != 0):
-        binum.append(num % 2)
-        print(binum)
+    count = 0
+    while (num % 2) > 1:
+        binum.append()
+        binum[count] = num % 2
+        count += 1
         num = num // 2
-        print(num)
 
-    print(binum)
+
+    print(num % 2)
 
 
 
