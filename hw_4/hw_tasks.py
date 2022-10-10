@@ -1,3 +1,6 @@
+from decimal import *
+getcontext().prec = 100
+
 # 1. Вычислить число π c заданной точностью
 
 # Положить n=0, S1 = 0 и S2 = 0; ( начальные установки )
@@ -9,17 +12,45 @@
 # ( нужная точность еще не достигнута )
 # Напечатать результат (S1 + S2) / 2
 # https://www.cyberforum.ru/cpp-beginners/thread33902.html?ysclid=l911q78zm1442546781
-# https://translated.turbopages.org/proxy_u/en-ru.ru.d986ea23-6342fae4-e987abd4-74722d776562/https/www.wikihow.com/Write-a-Python-Program-to-Calculate-Pi
-def first_task(acc):
-    n = 0
-    while(n < acc):
-        s_one = 0
-        s_two = 0
-        n += 1
-        s_one = s_two + 4 // (2 * n - 1)
-        n += 1
-        s_two = s_one + 4 // (2 * n - 1)
-        print((s_one + s_two) // 2, end='|')
+
+def first_task():
+    acc = input('количество знаков после запятой')
+    result = Decimal(3.0)
+    op = 1
+    n = 2
+
+    for n in range(2, 2 * (10 ** 5) + 1, 2):
+        result += 4 / Decimal(n * (n + 1) * (n + 2) * op)
+        op *= -1
+
+    result = round(result, acc)
+    print(result)
+    
+
+
+
+
+
+    # tmp = 0.0
+    # count = 1
+    # p = 0.0
+    # for i in range(2, reps):
+    #     p = (4 / (i * (i + 1) * (i + 2)))
+    #     if count % 2 == 0:
+    #         tmp = 3 + p
+    #     else:
+    #         tmp = 3 - p
+    #     count += 1
+    # print(tmp)
+
+
+
+
+
+
+
+
+
 
 
 
