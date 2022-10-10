@@ -1,5 +1,7 @@
 from decimal import *
+import random
 from math import *
+
 getcontext().prec = 100
 
 
@@ -88,9 +90,19 @@ def third_task():
 # 4 Задана натуральная степень k. Сформировать случайным образом список коэффициентов
 # (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
 
-def fourth_task(k):
-    polynomial = ''
-    liters = ['a', 'b', 'c']
+def fourth_task(file_name,k):
+    liters = 'abcd'
+    signs = '+-'
+
+    with open(f'{file_name}.txt', 'a', encoding='utf-8') as f:
+        multiple = random.randint(0, 101)
+        literal = liters[random.randint(0, 3)]
+        literal_two = liters[random.randint(0, 3)]
+        sign = signs[random.randint(0, 1)]
+        f.write(str(multiple) + literal + sign + literal_two + f'^{k}')
+
+
+
 
 
 
