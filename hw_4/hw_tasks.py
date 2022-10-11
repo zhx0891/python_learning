@@ -99,27 +99,26 @@ def fourth_task(file_name,k):
 
 
 def fifth_task(file_name1, file_name2):
-    def work_it(ls):
-        coeff = ''
-        sign =''
-        liter = ''
+    # def work_it(ls):
+    #     coeff = ''
+    #     sign =''
+    #     liter = ''
+    #
+    #     for i in ls:
+    #         if i.isdigit():
+    #             coeff = coeff + i
+    #         if i.isalpha():
+    #             coeff_int = int(coeff)
+    #             coeff = ''
+    #             liter = liter + i
+    #
+    #         if (i.isdigit() == False) or (i.isalpha() == False):
+    #             sign = i
 
-        for i in ls:
-            if i.isdigit():
-                coeff = coeff + i
-            if i.isalpha():
-                coeff_int = int(coeff)
-                coeff = ''
-                liter = liter + i
-
-            if (i.isdigit() == False) or (i.isalpha() == False):
-                sign = i
-
-
-        print(f' коэфицент = {coeff_int}')
-        print(f' литеры = {liter}')
-        print(f' знак =  {sign}')
-
+        #
+        # print(f' коэфицент = {coeff_int}')
+        # print(f' литеры = {liter}')
+        # print(f' знак =  {sign}')
 
     with open(f'{file_name1}.txt', 'r', encoding='utf-8') as f:
         multip_one = f.readline()
@@ -129,10 +128,32 @@ def fifth_task(file_name1, file_name2):
         multip_two = e.readline()
         print(multip_two)
 
-    work_it(multip_one)
+    with open(f'fifth_task_result.txt', 'w', encoding='utf-8') as d:
+        multip_one = multip_one + '+' + '(' + multip_two + ')'
+        d.write(multip_one)
+
+    # multip_one = [multip_one]
+    # for i in range(len(multip_one)-1):
+    #     if multip_one[i] == '(':
+    #         if multip_one[i-1] == '+':
+    #             multip_one[i - 1] = '-'
+    #         else:
+    #             multip_one[i - 1] = '+'
+
+    print(multip_one)
 
 
-    # one = {'coeff': , 'liter': 'b', 'sing': ,   }
+
+
+
+
+    # multip_main = {}
+    # for i in multip_one:
+    #     multip_main[i] = i
+        # multip_main[i] = multip_one[i]
+
+
+    # print(multip_main)
 
 
 
