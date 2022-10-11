@@ -7,15 +7,6 @@ getcontext().prec = 100
 
 # 1. Вычислить число π c заданной точностью
 
-# Положить n=0, S1 = 0 и S2 = 0; ( начальные установки )
-# Увеличить n на 1; ( n становится нечетным )
-# Вычислить S1 = S2 + 4/(2n-1); (S1 - есть верхняя оценка )
-# Увеличить n на 1; ( n становится четным )
-# Вычислить S2 = S1 - 4/(2n-1); (S2 - есть нижняя оценка)
-# Если S1 - S2 >= 10^(-5) перейти к шагу 2;
-# ( нужная точность еще не достигнута )
-# Напечатать результат (S1 + S2) / 2
-# https://www.cyberforum.ru/cpp-beginners/thread33902.html?ysclid=l911q78zm1442546781
 
 def first_task():
     acc = input('количество знаков после запятой')
@@ -103,16 +94,50 @@ def fourth_task(file_name,k):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 # 5 Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму
 # многочленов. Коэффициенты могут быть как положительными, так и отрицательными. Степени многочленов могут отличать
+
+
+def fifth_task(file_name1, file_name2):
+    def work_it(ls):
+        coeff = ''
+        sign =''
+        liter = ''
+
+        for i in ls:
+            if i.isdigit():
+                coeff = coeff + i
+            if i.isalpha():
+                coeff_int = int(coeff)
+                coeff = ''
+                liter = liter + i
+
+            if (i.isdigit() == False) or (i.isalpha() == False):
+                sign = i
+
+
+        print(f' коэфицент = {coeff_int}')
+        print(f' литеры = {liter}')
+        print(f' знак =  {sign}')
+
+
+    with open(f'{file_name1}.txt', 'r', encoding='utf-8') as f:
+        multip_one = f.readline()
+        print(multip_one)
+
+    with open(f'{file_name2}.txt', 'r', encoding='utf-8') as e:
+        multip_two = e.readline()
+        print(multip_two)
+
+    work_it(multip_one)
+
+
+    # one = {'coeff': , 'liter': 'b', 'sing': ,   }
+
+
+
+
+
+
+
+
