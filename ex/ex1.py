@@ -41,32 +41,36 @@
 
 # программа находит количество заданных последовательностей в строке
 
-def count_sequence(list_, sequence):
+# def count_sequence(list_, sequence):
+#
+#     count = 0
+#     ind = 0
+#     for i in list_:
+#         if list_[ind] == sequence[0]:
+#             j = 1
+#
+#             while j != len(sequence):
+#                 if ind <= (len(list_) - len(sequence)):
+#                     if list_[ind + j] == sequence[j]:
+#
+#                         j += 1
+#                         if j == len(sequence):
+#                             count += 1
+#                             break
+#                     else:
+#                         break
+#                 else:
+#                     break
+#         ind += 1
+#
+#     print(count)
+#
+# def count_sequence_two(str1, str2):
+#     print(len(str1.split(str2))-1)
+#
+#
+# count_sequence_two("weretriyrityrerere", "ere")
 
-    count = 0
-    ind = 0
-    for i in list_:
-        if list_[ind] == sequence[0]:
-            j = 1
 
-            while j != len(sequence):
-                if ind <= (len(list_) - len(sequence)):
-                    if list_[ind + j] == sequence[j]:
-
-                        j += 1
-                        if j == len(sequence):
-                            count += 1
-                            break
-                    else:
-                        break
-                else:
-                    break
-        ind += 1
-
-    print(count)
-
-def count_sequence_two(str1, str2):
-    print(len(str1.split(str2))-1)
-
-
-count_sequence_two("weretriyrityrerere", "ere")
+lst = [i for i in range(1, 21)]
+print(lst)
