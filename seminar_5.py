@@ -15,11 +15,23 @@
 
 # print(a)
 
-b = [i * i for i in range(11) if i % 2 == 0]
-c = [i * i if i % 2 == 0 else i ** 3 for i in range(11)]
-c = [i * i if i % 2 == 0 else i ** 3 for i in range(11) if i % 5 != 0]
-print(b)
-print(c)
+# b = [i * i for i in range(11) if i % 2 == 0]
+# c = [i * i if i % 2 == 0 else i ** 3 for i in range(11)]
+# c = [i * i if i % 2 == 0 else i ** 3 for i in range(11) if i % 5 != 0]
+# print(b)
+# print(c)
+
+############################################################
+###################  map & filter  #########################
+############################################################
+
+a = [1, 2, 3, 4, 5, 6, 6]
+
+itog = list(map(lambda x: x **2, a))
+print(itog) 
+filter_itog = list(filter(lambda x: x % 2 == 0, a)) 
+print(filter_itog)
+
 
 
  
