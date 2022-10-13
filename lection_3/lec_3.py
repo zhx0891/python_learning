@@ -52,26 +52,57 @@ def m(x):
 # one = one.split(' ')
 # print(type(one))
 ###########################################
-f = open('task1.txt', 'r')
-data = f.read() + ' '
-f.close()  
+# f = open('task1.txt', 'r')
+# data = f.read() + ' '
+# f.close()  
 
-nums = []
+# nums = []
 
-while data != '': # прогон по строке пока она не пустая
-    space_pos = data.index(' ') # первая позиция пробела
-	nums.append(int(data[:space_pos])) # взять всё что находится от 
-	# первого символа до позиции первого пробела и превратить в инт
-	data = data[space_pos+1]
+# while data != '': # прогон по строке пока она не пустая
+#     space_pos = data.index(' ') # первая позиция пробела
+# 	nums.append(int(data[:space_pos])) # взять всё что находится от 
+# 	# первого символа до позиции первого пробела и превратить в инт
+# 	data = data[space_pos+1]
 
-out = []
+# out = []
 
-for e in nums:
-	if not e % 2:
-		out.append((e,e **2))
-print(out)
+# for e in nums:
+# 	if not e % 2:
+# 		out.append((e,e **2))
+# print(out)
+######################################################
+# def select(f, col):
+# 	return [f(x) for x in col]
 
-	
+# def where(f, col):
+# 	return[x for x in col if f(x) ]
+
+# data = '1 2 3 5 8 15 23 38'.split()
+
+# res = select(int, data)	
+# res = where(lambda x: not x % 2, res)
+# res = select(lambda x: (x, x **2), res)
+
+#####################################################
+
+# li = [x for x in range(1, 20)]	
+# li =list(map(lambda x:x+10, li))
+# print(li)
+
+######################################################
+
+# data = map(int,input().split())
+# print(data)
+
+# data = li (map(int, '1 2 5 5 34 4'.split()))
+# print(data)
+
+######################################################
+
+data = [x for x in range(10)]
+
+res = filter(lambda x: x % 2 == 0, data ))
+print(res)
 
 
 
