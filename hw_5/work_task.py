@@ -83,9 +83,6 @@ def move(f, count):
 	move(f, count)
 
 
-
-
-
 def show_field(f):
 	for i in f:
 		print(i)
@@ -93,7 +90,22 @@ def show_field(f):
 
 
 
+# 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных
 
+def fourth():
+	task_str = 'wwwwwwwwwwwweeeeeeeeeeerrrrrrrrrrrrr0000000000000000bbbbbbbbbbbbb'
+
+	com_map = ''
+	count = 0
+	for i in range(len(task_str)-1):
+		if task_str[i+1] != task_str[i]:
+			com_map += task_str[i]
+			com_map += str(count)
+			
+		else:
+			count +=1
+
+	print(com_map)
 
 
 
