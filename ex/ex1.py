@@ -72,5 +72,20 @@
 # count_sequence_two("weretriyrityrerere", "ere")
 
 
-lst = [i for i in range(1, 21)]
-print(lst)
+# lst = [i for i in range(1, 21)]
+# print(lst)
+
+
+list_task = 'Напишите программу удалабвяющую из текстаабв все слоабвва, содержаабвщие ""абв""'
+list_task_sp = (list_task.split())
+
+for i in list_task_sp:
+	print(i)
+	for j in range(len(i)-1):
+
+		if i[j] == 'а':
+			if i[j+1] == 'б':
+				if i[j+2] == 'в':
+					list_task_sp.remove(i)
+
+print(list_task_sp)
