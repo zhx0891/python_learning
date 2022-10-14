@@ -94,15 +94,15 @@ def m(x):
 # data = map(int,input().split())
 # print(data)
 
-# data = li (map(int, '1 2 5 5 34 4'.split()))
-# print(data)
+data = list (map(int, '1 2 5 5 34 4'.split()))
+print(data)
 
 ######################################################
 
-data = [x for x in range(10)]
+# data = [x for x in range(10)]
 
-res = filter(lambda x: x % 2 == 0, data ))
-print(res)
+# res = filter(lambda x: x % 2 == 0, data ))
+# print(res)
 
 
 
