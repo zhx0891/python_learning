@@ -39,7 +39,7 @@ def second():
 		else:
 			last_move = 'player_2'
 			print(last_move)
-			take = int(input('?'))
+			take = randint(1, 29)
 			if take <= 28:
 				bunch_of_sweets -= take
 				count += 1
