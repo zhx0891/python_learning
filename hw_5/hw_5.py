@@ -1,6 +1,7 @@
 import work_task as wt
 
-wt.first()
-	
+# wt.first()
+
+wt.second()
 
 
