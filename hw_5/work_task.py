@@ -1,4 +1,5 @@
 from random import randint
+
 # 1. Напишите программу, удаляющую из текста все слова, содержащие ""абв""
 def first():
 	list_task = 'Напишите программу удалабвяющую из текстаабв все слоабвва, содержаабвщие ""абв""'
@@ -8,7 +9,7 @@ def first():
 	for i in list_sp:
 		e = 0
 		for j in range(len(i)-1):
-			if i[j] == 'а' and  (i[j+1] == 'б') and (i[j+2] == 'в'):
+			if i[j] == 'а' and (i[j+1] == 'б') and (i[j+2] == 'в'):
 				e = 1
 		if e != 1:
 			result.append(i)
@@ -16,7 +17,8 @@ def first():
 	print(result)
 
 
-# Создайте программу для игры с конфетами человек против человека.
+# 2. Создайте программу для игры в конфеты человек против человека.
+
 
 def second():
 	bunch_of_sweets = 202
@@ -48,6 +50,24 @@ def second():
 				print('не больше 28')
 
 	print(f'{last_move} winner')
+
+
+
+# 3. Создайте программу для игры в ""Крестики-нолики"".
+
+def third():
+	player = randint(1, 3)
+	field = [['.', '.', '.'],
+			 ['.', '.', '.'],
+			 [ '.', '.', '.'],
+			 [ '.', '.', '.']]
+
+	field[1][1] = '0'
+	show_field(field)
+
+def show_field(f):
+	for i in f:
+		print(i)
 
 
 
