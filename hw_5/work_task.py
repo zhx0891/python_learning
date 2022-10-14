@@ -56,14 +56,35 @@ def second():
 # 3. Создайте программу для игры в ""Крестики-нолики"".
 
 def third():
-	player = randint(1, 3)
+	count = randint(1, 3)
+
 	field = [['.', '.', '.'],
 			 ['.', '.', '.'],
-			 [ '.', '.', '.'],
 			 [ '.', '.', '.']]
 
-	field[1][1] = '0'
 	show_field(field)
+	move(field, count)
+
+
+
+def move(f, count):
+	if count % 2 != 0:
+		print('играют крестики')
+	else:
+		print('играют нолики')
+	x = int(input('по горизонтали ?'))
+	y = int(input('по вертикали ?'))
+	if count % 2 != 0:
+		f[x-1][y-1] = 'x'
+	else:
+		f[x-1][y-1] = '0'
+	show_field(f)
+	count += 1
+	move(f, count)
+
+
+
+
 
 def show_field(f):
 	for i in f:
