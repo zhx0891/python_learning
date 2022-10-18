@@ -101,7 +101,7 @@ def fourth():
 		if task_str[i+1] != task_str[i]:
 			com_map += task_str[i]
 			com_map += str(count)
-			
+
 		else:
 			count +=1
 
