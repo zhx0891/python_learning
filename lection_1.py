@@ -39,14 +39,26 @@ text = '40 сороков гладили коров'
 # print(text[:5])
 # print(text[3::1])
 ##################################
-test.append(45)
-print(test)
-test.remove('3')
-print(test)
+# print(test)
+# test.append(45)
+# print(test)
+# test.remove('3')
+# print(test)
+# del test[0]
+# print(test)
+
 ##################################
 # def name(param):
 # 	print(param * 2)
 
 # name(2)
 # name('2')	
+
 ##################################
+############ семинар 1 ###########
+##################################
+
+print(16 ** 0.5)  # квадратный корень из числа
+
+# \n перенос строки
+# \r перевод каретки
