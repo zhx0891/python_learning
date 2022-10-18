@@ -66,6 +66,7 @@
 
 ###########################################################		
 ############## кортежи (tuple) ############################
+###########################################################
 
 # a, b = 3, 5 # множественное присваивание
 
@@ -114,18 +115,31 @@
 ################### множества (set) ###############################
 ###################################################################
 
-rgb = {'red', 'green', 'blue'}
-print(type(rgb)) # <class 'set'>
-print(rgb) # {'blue', 'green', 'red'}
-rgb.add(345) 
-print(rgb) # {345, 'blue', 'green', 'red'}
-rgb.remove(345)
-print(rgb) # {'blue', 'green', 'red'}
-rgb.discard('не существующее значение')
-rgb.clear()
+# rgb = {'red', 'green', 'blue'}
+# print(type(rgb)) # <class 'set'>
+# print(rgb) # {'blue', 'green', 'red'}
+# rgb.add(345) 
+# print(rgb) # {345, 'blue', 'green', 'red'}
+# rgb.remove(345)
+# print(rgb) # {'blue', 'green', 'red'}
+# rgb.discard('не существующее значение')
+# rgb.clear()
 
-f = frozenset(rgb)
-eee = frozenset{12, 54, 56, 34, 87}
-print(type(f))
+# f = frozenset(rgb)
+# # eee = frozenset{12, 54, 56, 34, 87}
+# print(type(f))
 
+
+#######################################################################
+
+lst = [1, 2, 3, 4, 5]
+print(lst)
+lst.pop()
+print(lst)
+lst.pop(0)
+print(lst)
+lst.insert(0, 1)
+print(lst)
+lst.append(5)
+print(lst)
 
