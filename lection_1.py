@@ -62,3 +62,41 @@ def name(param):
 
 # \n перенос строки
 # \r перевод каретки
+
+##################################
+########### семинар 2 ############
+##################################
+
+# a = 13
+# b = 234
+# a, b = b, a # обмен значениями у переменных
+
+##################################
+
+# for x in range(100):
+# 	if x == 10:
+# 		continue
+# 	print(x)	
+# 	if x == 15:
+# 		break
+
+##################################		
+
+# print(help(str))
+# print(dir(str))
+# print(help(str.endswith))
+
+##################################
+
+# a = 'dhdhdhdhkadfahksdfhaksdfhakd'
+# b  = 'dhd'
+
+# length = len(a) - len(b)
+# count = 0
+# for i in range(length):
+# 	if b == a[i:i + len(b)]:
+# 		count += 1
+
+# print(count)
+
+###################################		

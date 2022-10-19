@@ -42,15 +42,17 @@ def third_task(n):
 # Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на позициях a и b. Значения N, a и b вводит пользователь с клавиатуры.
 
 
-def fourth_task():
-    N = int(input('N?'))
-    a = int(input('a?'))
-    b = int(input('b?'))
+def fourth_task(N, a, b):
     if b == N: b -= 1
     sequence = []
-    for i in range(N):
-        sequence.append(randint(-N, N))
+    for i in range(N, 0, -1):
+        sequence.append(i * (-1))
+    for i in range(N + 1):
+        sequence.append(i)
 
+
+    print(sequence)
+    print(f' a = {sequence[a]}  b = {sequence[b]} ')
     return sequence[a] * sequence[b]
 
 
@@ -75,5 +77,5 @@ def fifth_task():
 # print(first_task())
 # print(second_task(4))
 # print(third_task(6))
-# print(fourth_task())
-fifth_task()
+fourth_task(10, 3, 8)
+# fifth_task()
