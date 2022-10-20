@@ -77,5 +77,5 @@ def fifth_task():
 # print(first_task())
 # print(second_task(4))
 # print(third_task(6))
-fourth_task(10, 3, 8)
-# fifth_task()
+# fourth_task(10, 3, 8)
+fifth_task()
