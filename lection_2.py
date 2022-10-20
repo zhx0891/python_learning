@@ -163,7 +163,8 @@ rgb = {'red', 'green', 'blue'}
 # 1.напишите программу, которая определит позицию второго вхождения
 #  строки в списке либо сообщит, что её нет.
 
-a = ['asdf', 'dfds', '343566', 'adsfdre343', 'dfioad9879', 'asdf', 'asdfasd', 'asd', '54345', '234']
+a = ['asdf', 'dfds', '343566', 'adsfdre234', 'dfioad9879', 'asdf', 'asdfasd', 'asd', '54345', '234']
+
 
 def first_task(lst_, str_, pos):
 	print(lst_)
@@ -179,8 +180,19 @@ def first_task(lst_, str_, pos):
 		return lst_positions[pos - 1]
 		
 	    	
+# first_task(a, 'asdf', 2)
 
+# 2. Задайте список. Напишите программу которая определит, присутствует ли некое число в этом списке.
+
+
+def second_task(lst_, numb):
+	numb = str(numb)
+	for i in lst_:
+		if numb in i:
+			if i.isdigit():
+				print('yeah')
 
 			
+			
 
-first_task(a, 'asdf', 2)
+second_task(a, 234)	
