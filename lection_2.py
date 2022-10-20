@@ -88,16 +88,19 @@
 ############ словари (dictionary) ######################### объектов с доступом по ключу 
 ###########################################################
 
-dct = {}
-dct[0] = 0
-dct[1] = 1
-dct[11] = 11 
-print(dct)
+# dct = {}
+# dct[0] = 0
+# dct[1] = 1
+# dct[11] = 11 
+# print(dct.keys())
+# print(dct.values())
+# print(dct.items()) # пары (key: value)
+# print(dct)
 # print(dct[0])
 # print(dct.get(1))
 # print(dct.get(10), 'такого ключа нет')
-dct.pop(11)
-print(dct)
+# dct.pop(11)
+# print(dct)
 
 # dict_ = {}
 # dict_1 = \
@@ -121,9 +124,6 @@ print(dct)
 
 # dict_1['up'] = 'up !'
 # print(dict_1['up'])
-
-# можно ли  удалять пары из словаря?
-# как изменить ключ?
 
 
 ###################################################################
@@ -160,3 +160,27 @@ rgb = {'red', 'green', 'blue'}
 
 ########################################################################
 
+# 1.напишите программу, которая определит позицию второго вхождения
+#  строки в списке либо сообщит, что её нет.
+
+a = ['asdf', 'dfds', '343566', 'adsfdre343', 'dfioad9879', 'asdf', 'asdfasd', 'asd', '54345', '234']
+
+def first_task(lst_, str_, pos):
+	print(lst_)
+	lst_positions = []
+	for i in range(len(lst_) - 1):
+		if lst_[i] == str_:
+			lst_positions.append(i)
+	if len(lst_positions) < pos:
+		print('вхождения нет')
+		return -1
+	else:
+		print(lst_positions[pos - 1])
+		return lst_positions[pos - 1]
+		
+	    	
+
+
+			
+
+first_task(a, 'asdf', 2)
