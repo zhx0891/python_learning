@@ -64,6 +64,7 @@ def second_task(N):
 
 # 3 Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся элементов
 # исходной последовательности.
+
 def third_task():
     sequence = [2, 4, 4, 6, 7, 2, 9, 0, 9, 5, 3, 6, 7, 4, 1]
     unique_els = []
@@ -99,27 +100,6 @@ def fourth_task(file_name,k):
 
 
 def fifth_task(file_name1, file_name2):
-    # def work_it(ls):
-    #     coeff = ''
-    #     sign =''
-    #     liter = ''
-    #
-    #     for i in ls:
-    #         if i.isdigit():
-    #             coeff = coeff + i
-    #         if i.isalpha():
-    #             coeff_int = int(coeff)
-    #             coeff = ''
-    #             liter = liter + i
-    #
-    #         if (i.isdigit() == False) or (i.isalpha() == False):
-    #             sign = i
-
-        #
-        # print(f' коэфицент = {coeff_int}')
-        # print(f' литеры = {liter}')
-        # print(f' знак =  {sign}')
-
     with open(f'{file_name1}.txt', 'r', encoding='utf-8') as f:
         multip_one = f.readline()
         print(multip_one)
@@ -132,29 +112,15 @@ def fifth_task(file_name1, file_name2):
         multip_one = multip_one + '+' + '(' + multip_two + ')'
         d.write(multip_one)
 
-    # multip_one = [multip_one]
-    # for i in range(len(multip_one)-1):
-    #     if multip_one[i] == '(':
-    #         if multip_one[i-1] == '+':
-    #             multip_one[i - 1] = '-'
-    #         else:
-    #             multip_one[i - 1] = '+'
-
     print(multip_one)
 
+fifth_task('polynomial', 'polynomial_one')
 
 
 
 
 
-    # multip_main = {}
-    # for i in multip_one:
-    #     multip_main[i] = i
-        # multip_main[i] = multip_one[i]
-
-
-    # print(multip_main)
-
+    
 
 
 
