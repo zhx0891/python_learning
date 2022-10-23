@@ -1,3 +1,4 @@
+from time import sleep
 ########################################################	
 # a открытие для добавления данных
 # r открытие для чтения 
@@ -11,6 +12,7 @@
 # text_value.write(f'\ntext {a}')
 # text_value.close()
 # exit()
+
 #########################################################
 
 # with open('file_lec_2.txt', 'w') as text_value:
@@ -26,6 +28,26 @@
 # 	test.append(line)
 # text_value.close()
 # print(test)
+
+
+# f = open('text_seminar_4', 'w', encoding ='utf-8')
+# f.write('text')
+
+# with open('text_seminar_4', 'w', encoding ='utf-8') as f:
+# 	f.write('text')
+
+
+# with open('text_seminar_4', 'r', encoding ='utf-8') as f:
+# 	# print(f.read())
+# 	# sleep(2)
+# 	# print(f.readline())
+# 	# sleep(2)
+# 	lines = print(f.readlines())
+
+# lines[3] = 'text'
+# with open('text_seminar_4', 'w', encoding ='utf-8') as f:
+# 	for line in lines:
+# 		f.write(line)
 
 ##########################################################
 
@@ -130,7 +152,7 @@
 ################### множества (set) ###############################
 ###################################################################
 
-rgb = {'red', 'green', 'blue'}
+# rgb = {'red', 'green', 'blue'}
 # print(type(rgb)) # <class 'set'>
 # rgb.add(345)
 # for i in range(10):
@@ -163,21 +185,21 @@ rgb = {'red', 'green', 'blue'}
 # 1.напишите программу, которая определит позицию второго вхождения
 #  строки в списке либо сообщит, что её нет.
 
-a = ['asdf', 'dfds', '343566', 'adsfdre234', 'dfioad9879', 'asdf', 'asdfasd', 'asd', '54345', '234']
+# a = ['asdf', 'dfds', '343566', 'adsfdre234', 'dfioad9879', 'asdf', 'asdfasd', 'asd', '54345', '234']
 
 
-def first_task(lst_, str_, pos):
-	print(lst_)
-	lst_positions = []
-	for i in range(len(lst_) - 1):
-		if lst_[i] == str_:
-			lst_positions.append(i)
-	if len(lst_positions) < pos:
-		print('вхождения нет')
-		return -1
-	else:
-		print(lst_positions[pos - 1])
-		return lst_positions[pos - 1]
+# def first_task(lst_, str_, pos):
+# 	print(lst_)
+# 	lst_positions = []
+# 	for i in range(len(lst_) - 1):
+# 		if lst_[i] == str_:
+# 			lst_positions.append(i)
+# 	if len(lst_positions) < pos:
+# 		print('вхождения нет')
+# 		return -1
+# 	else:
+# 		print(lst_positions[pos - 1])
+# 		return lst_positions[pos - 1]
 		
 	    	
 # first_task(a, 'asdf', 2)
@@ -185,14 +207,47 @@ def first_task(lst_, str_, pos):
 # 2. Задайте список. Напишите программу которая определит, присутствует ли некое число в этом списке.
 
 
-def second_task(lst_, numb):
-	numb = str(numb)
-	for i in lst_:
-		if numb in i:
-			if i.isdigit():
-				print('yeah')
+# def second_task(lst_, numb):
+# 	numb = str(numb)
+# 	for i in lst_:
+# 		if numb in i:
+# 			if i.isdigit():
+# 				print('yeah')
 
 			
 			
 
-second_task(a, 234)	
+# second_task(a, 234)	
+
+
+####################################################################
+
+# mem = {1:  1, 2: 2}
+
+# def fib(n):
+# 	if n not in mem:
+# 		mem[n] = fib(n - 1) + fib(n - 2)
+
+# 	return mem[n]
+# 	
+####################################################################
+################ task for fourth sem ###############################
+####################################################################
+
+# Задайте строку с набором чисел, в качестве разделителя используем запятую с пробелом.
+# Найти большее и меньшее число. 	
+
+str_ = '32, 35, 34, 67, 21, 45, 55, 23'
+str_sp = (str_.split(', '))
+
+max = 0
+min = int(str_sp[0])
+
+for i in str_sp:
+	i = int(i)
+	if i > max:
+		max = i
+	if i < min:
+	    min = i
+
+print(f'max = {max} min = {min}')
