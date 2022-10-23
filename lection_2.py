@@ -275,7 +275,7 @@ def multip(n):
 def smallest_common_multiple(a, b):
 	num_1 = multip(a)
 	num_2 = multip(b)
-	res = num_1
+	res = num_1.copy()
 
 	for i in num_2:
 		if i not in num_1:
