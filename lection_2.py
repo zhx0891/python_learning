@@ -262,7 +262,7 @@ from time import sleep
 # Найдите корни квадратного уравнения ax^2 + bx + c = 0
 a, b, c = 4, 8, 6
 D = b**2 - 4 * (a * c)
-
+print(D)
 
 
 
@@ -296,7 +296,7 @@ def smallest_common_multiple(a, b):
 	return nok	
     
 	
-print(smallest_common_multiple(35, 12))
+# print(smallest_common_multiple(35, 12))
 
 
 
