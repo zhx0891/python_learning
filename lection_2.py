@@ -237,17 +237,66 @@ from time import sleep
 # Задайте строку с набором чисел, в качестве разделителя используем запятую с пробелом.
 # Найти большее и меньшее число. 	
 
-str_ = '32, 35, 34, 67, 21, 45, 55, 23'
-str_sp = (str_.split(', '))
+# str_ = '32, 35, 34, 67, 21, 45, 55, 23'
+# str_sp = (str_.split(', '))
 
-max = 0
-min = int(str_sp[0])
+# max = 0
+# min = int(str_sp[0])
 
-for i in str_sp:
-	i = int(i)
-	if i > max:
-		max = i
-	if i < min:
-	    min = i
+# for i in str_sp:
+# 	i = int(i)
+# 	if i > max:
+# 		max = i
+# 	if i < min:
+# 	    min = i
 
-print(f'max = {max} min = {min}')
+# print(f'max = {max} min = {min}')
+####################################################################
+# Найдите корни квадратного уравнения ax^2 + bx + c = 0
+
+
+
+
+####################################################################
+# Задайте два числа, найдите  наименьшее общее кратное
+
+
+def multip(n):
+	res = []
+	n = int(n)
+	for i in range(2, n):
+		while n % i == 0:
+			res.append(i)
+			n //= i
+	print(res)	    
+	return res
+
+
+def smallest_common_multiple(a, b):
+	num_1 = multip(a)
+	num_2 = multip(b)
+	res = num_1
+
+	for i in num_2:
+		if i not in num_1:
+			res.append(i)
+	print(res)
+	nok = 1
+	for i in res:
+		nok *= i
+	return nok	
+    
+	
+print(smallest_common_multiple(35, 12))
+
+
+
+
+
+
+
+
+
+
+		
+
