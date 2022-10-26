@@ -262,6 +262,15 @@ from time import sleep
 # Найдите корни квадратного уравнения ax^2 + bx + c = 0
 a, b, c = 4, 8, 6
 D = b**2 - 4 * (a * c)
+if D < 0:
+	print('корней нет')
+if D == 0:
+	print('один корень')
+if D > 0:
+	print('два корня')
+	
+
+
 print(D)
 
 
