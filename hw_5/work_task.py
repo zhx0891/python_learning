@@ -92,20 +92,47 @@ def show_field(f):
 
 # 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных
 
-def fourth():
-	task_str = 'wwwwwwwwwwwweeeeeeeeeeerrrrrrrrrrrrr0000000000000000bbbbbbbbbbbbb'
-
-	com_map = ''
-	count = 0
-	for i in range(len(task_str)-1):
-		if task_str[i+1] != task_str[i]:
-			com_map += task_str[i]
-			com_map += str(count)
-
+def fourth(task_str):
+	res = []
+	for ind, item in enumerate(task_str):
+		if ind != len(task_str) - 1:
+			if item != item:
+				res.append((item, ind + 1))
 		else:
-			count +=1
+			res.append((item, ind + 1))
 
-	print(com_map)
+
+
+
+
+
+
+
+
+
+
+	print(res)
+
+
+
+
+
+
+	# com_map = ''
+	# count = 0
+	# for i in range(len(task_str) - 1):
+	# 	if task_str[i+1] != task_str[i]:
+	# 		com_map += task_str[i]
+	# 		com_map += '.'
+	# 		count += 1
+	# 		com_map += str(count)
+	# 		com_map += ':'
+	#
+	# 		count = 0
+	# 	else:
+	# 		count +=1
+	#
+	# print(com_map)
 
 
 
