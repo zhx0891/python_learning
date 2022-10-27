@@ -93,22 +93,24 @@ def show_field(f):
 # 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных
 
 def fourth(task_str):
-	res = []
-	for ind, item in enumerate(task_str):
-		if ind != len(task_str) - 1:
-			if item != item:
-				res.append((item, ind + 1))
+	res = ''
+	count = 0
+	for ind, i in enumerate(task_str):
+		if i != (len(task_str) - 1):
+			if i != task_str[ind + 1]:
+				res += (f'{str(count)}.{i} ')
+				# res +=str(count)
+				# res +='.'
+				# res += i 
+				# res += ':'
+			else:
+				count += 1
 		else:
-			res.append((item, ind + 1))
+			res += (f'{str(count)}.{i} ')
 
 
 
-
-
-
-
-
-
+		
 
 
 	print(res)
