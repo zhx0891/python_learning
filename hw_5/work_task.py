@@ -96,13 +96,11 @@ def fourth(task_str):
 	res = ''
 	count = 0
 	for ind, i in enumerate(task_str):
-		if i != (len(task_str) - 1):
+		if ind != (len(task_str) - 1):
 			if i != task_str[ind + 1]:
+				count += 1
 				res += (f'{str(count)}.{i} ')
-				# res +=str(count)
-				# res +='.'
-				# res += i 
-				# res += ':'
+				count = 0
 			else:
 				count += 1
 		else:
