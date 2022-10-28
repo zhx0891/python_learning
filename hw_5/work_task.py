@@ -1,4 +1,5 @@
 from random import randint
+import os
 
 # 1. Напишите программу, удаляющую из текста все слова, содержащие ""абв""
 def first():
@@ -67,6 +68,11 @@ def third():
 	move(field, count, cells)
 
 
+def gameover():
+	print('игра окончена')
+	quit()
+
+
 def move(f, count, cells):
 	if cells < 9:
 		if count % 2 != 0:
@@ -82,11 +88,11 @@ def move(f, count, cells):
 			f[x - 1][y - 1] = '0'
 		show_field(f, cells)
 		count += 1
+		check_win(f, count)
 		move(f, count, cells)
 	else:
 		show_field(f, cells)
-		print('игра окончена')
-		quit()
+		gameover()
 
 
 def show_field(f, cells):
@@ -96,23 +102,28 @@ def show_field(f, cells):
 	else:
 		for i in f:
 			print(i)
-		print('игра окончена')
-		quit()
+		gameover()
 
-def check_win(f, pl):
+def check_win(f, count):
+	if count % 2 != 0:
+		pl = 'x'
+	else:
+		pl = '0'
+
 	for i in f:
 		if i[0] == pl and i[1] == pl and i[2] == pl:
-			print('игра окончена')
-			quit()
-	else:
-		print("it's work")
+			gameover()
 
 	for	i in range(3):
 		if (f[0][i]) == pl and (f[1][i]) == pl  and (f[2][i])  == pl:
-			print('игра окончена')
-			quit()
-	else:
-		print("it's work")
+			gameover()
+
+	if (f[0][0]) == pl and (f[1][1]) == pl and (f[2][2]) == pl:
+		gameover()
+
+	if (f[2][0]) == pl and (f[1][1]) == pl and (f[0][2]) == pl:
+		gameover()
+
 
 
 

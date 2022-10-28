@@ -7,8 +7,8 @@
 # print(res)
 
 
-f = [['0', '.', '.'],
-	 ['0', '.', '.'],
+f = [['.', '.', '0'],
+	 ['.', '0', '.'],
 	 ['0', '.', '0']]
 
 # print(len(f))
@@ -21,14 +21,31 @@ def check_win(f, pl):
 			print('игра окончена')
 			quit()
 	else:
-		print("don't work")
+		print("it's work")
 
 	for	i in range(3):
 		if (f[0][i]) == pl and (f[1][i]) == pl  and (f[2][i])  == pl:
 			print('игра окончена')
 			quit()
 	else:
-		print("don't work")
+		print("it's work")
+
+	
+	
+	if (f[0][0]) == pl and (f[1][1]) == pl  and (f[2][2])  == pl:
+		print('игра окончена')
+		quit()
+	else:
+		print("it's work")
+
+	
+	if (f[2][0]) == pl and (f[1][1]) == pl  and (f[0][2])  == pl:
+		print('игра окончена')
+		quit()
+	else:
+		print("it's work")	
+
+
 
 
 
