@@ -56,41 +56,68 @@ def second():
 # 3. Создайте программу для игры в ""Крестики-нолики"".
 
 def third():
+	cells = 0
 	count = randint(1, 3)
 
 	field = [['.', '.', '.'],
 			 ['.', '.', '.'],
-			 [ '.', '.', '.']]
+			 ['.', '.', '.']]
 
-	show_field(field)
-	move(field, count)
+	show_field(field, cells)
+	move(field, count, cells)
 
 
-
-def move(f, count):
-	if count % 2 != 0:
-		print('играют крестики')
+def move(f, count, cells):
+	if cells < 9:
+		if count % 2 != 0:
+			print('играют крестики')
+		else:
+			print('играют нолики')
+		x = int(input('по вертикали?'))
+		y = int(input('по горизонтали  ?'))
+		cells += 1
+		if count % 2 != 0:
+			f[x - 1][y - 1] = 'x'
+		else:
+			f[x - 1][y - 1] = '0'
+		show_field(f, cells)
+		count += 1
+		move(f, count, cells)
 	else:
-		print('играют нолики')
-	x = int(input('по горизонтали ?'))
-	y = int(input('по вертикали ?'))
-	if count % 2 != 0:
-		f[x-1][y-1] = 'x'
+		show_field(f, cells)
+		print('игра окончена')
+		quit()
+
+
+def show_field(f, cells):
+	if cells < 9:
+		for i in f:
+			print(i)
 	else:
-		f[x-1][y-1] = '0'
-	show_field(f)
-	count += 1
-	move(f, count)
+		for i in f:
+			print(i)
+		print('игра окончена')
+		quit()
 
-
-def show_field(f):
+def check_win(f, pl):
 	for i in f:
-		print(i)
+		if i[0] == pl and i[1] == pl and i[2] == pl:
+			print('игра окончена')
+			quit()
+	else:
+		print("it's work")
+
+	for	i in range(3):
+		if (f[0][i]) == pl and (f[1][i]) == pl  and (f[2][i])  == pl:
+			print('игра окончена')
+			quit()
+	else:
+		print("it's work")
 
 
 
 
-# 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных
+	# 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных
 
 def fourth_pack_rle(task_str):
 	res = ''
@@ -119,6 +146,10 @@ def fourth_unpack_rle(unp):
 	print(res)
 	return res
 
+# 5*. Дан список чисел. Создайте список, в который попадают числа, описываемые возрастающую последовательность. Порядок элементов менять нельзя.
+# [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
+#
+# Входные и выходные данные хранятся в отдельных текстовых файлах.
 
 
 

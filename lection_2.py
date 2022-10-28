@@ -260,18 +260,18 @@ from time import sleep
 
 ####################################################################
 # Найдите корни квадратного уравнения ax^2 + bx + c = 0
-a, b, c = 4, 8, 6
-D = b**2 - 4 * (a * c)
-if D < 0:
-	print('корней нет')
-if D == 0:
-	print('один корень')
-if D > 0:
-	print('два корня')
+# a, b, c = 4, 8, 6
+# D = b**2 - 4 * (a * c)
+# if D < 0:
+# 	print('корней нет')
+# if D == 0:
+# 	print('один корень')
+# if D > 0:
+# 	print('два корня')
 	
 
 
-print(D)
+# print(D)
 
 
 
@@ -279,30 +279,30 @@ print(D)
 # Задайте два числа, найдите  наименьшее общее кратное
 
 
-def multip(n):
-	res = []
-	n = int(n)
-	for i in range(2, n):
-		while n % i == 0:
-			res.append(i)
-			n //= i
-	print(res)	    
-	return res
+# def multip(n):
+# 	res = []
+# 	n = int(n)
+# 	for i in range(2, n):
+# 		while n % i == 0:
+# 			res.append(i)
+# 			n //= i
+# 	print(res)	    
+# 	return res
 
 
-def smallest_common_multiple(a, b):
-	num_1 = multip(a)
-	num_2 = multip(b)
-	res = num_1.copy()
+# def smallest_common_multiple(a, b):
+# 	num_1 = multip(a)
+# 	num_2 = multip(b)
+# 	res = num_1.copy()
 
-	for i in num_2:
-		if i not in num_1:
-			res.append(i)
-	print(res)
-	nok = 1
-	for i in res:
-		nok *= i
-	return nok	
+# 	for i in num_2:
+# 		if i not in num_1:
+# 			res.append(i)
+# 	print(res)
+# 	nok = 1
+# 	for i in res:
+# 		nok *= i
+# 	return nok	
     
 	
 # print(smallest_common_multiple(35, 12))
