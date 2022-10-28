@@ -92,7 +92,7 @@ def show_field(f):
 
 # 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных
 
-def fourth(task_str):
+def fourth_pack_rle(task_str):
 	res = ''
 	count = 0
 	for ind, i in enumerate(task_str):
@@ -105,34 +105,24 @@ def fourth(task_str):
 				count += 1
 		else:
 			res += (f'{str(count)}.{i} ')
+	print(res)
+	return res
 
 
-
-		
-
+def fourth_unpack_rle(unp):
+	res = ''
+	unp_sp = unp.split(' ')
+	for i in unp_sp:
+		a = i.split('.')
+		res += (int(a[0]) * a[1])
 
 	print(res)
+	return res
 
 
 
 
 
-
-	# com_map = ''
-	# count = 0
-	# for i in range(len(task_str) - 1):
-	# 	if task_str[i+1] != task_str[i]:
-	# 		com_map += task_str[i]
-	# 		com_map += '.'
-	# 		count += 1
-	# 		com_map += str(count)
-	# 		com_map += ':'
-	#
-	# 		count = 0
-	# 	else:
-	# 		count +=1
-	#
-	# print(com_map)
 
 
 
