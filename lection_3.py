@@ -3,38 +3,41 @@
 
 # def mylt(a, b):
 # 	return a * b
-
-
 # m = mylt
-
 
 # def calc(a, b):
 # 	return a + b
-
-
 # c = calc
-
 
 # def math(op, a, b):
 # 	return op(a, b)
-
-
 # print(math(c, 5, 6)) # 11
 # print(math(m, 5, 6)) # 30
 
 # sum = lambda x, y: x + y
 # print(math(sum, 4, 5)) # 9
-
 # print(math(lambda x, y: x ** y, 5, 3)) # 125
+
 # max_number = lambda a, b: a if a > b else b
 # print(max_number(3, 5))
 
 # e = list([lambda i: i * 10 for i in range(1, 11)])
 # print(e)
-# lst_ = [12, 32, 45, 64, 53, 93, 123]
-# exp = list(map(lambda x: x * 2, lst_))
-# print(lst_)
 
+# lst_ = [12, 32, 45, 64, 53, 93, 123]
+# print(list(map(lambda x: x * 2, lst_)))
+
+# задание значений по умолчанию для аргументов
+# o = lambda x=1,y=2,z=3:x+y+z
+# print(o(2,3)) # 8 так как переданы только первые два аргумента (x и y)
+# Для лямбды необязательны аргументы, она работает и без них
+# a, b = 3, 2
+# y=lambda :2+3
+# print(y()) # 5
+
+lw = [4, 6, 1]
+exp =list([lambda i, b = 5: i*b for i in range(10)])
+print(exp) 
 
 
 ############################ list comprehension #############################
@@ -45,19 +48,16 @@
 
 #############################################################################
 # [exp for item in iterable]
+
 # lst_ = []
 # for i in range(50):
 # 		lst_.append(i)
-
 # # print(lst_)	
 
-# lst_exp = [i for i in range(1,50)]
-# # print(lst_exp)
+# lst_compre_exp = [i for i in range(1,50)]
+# # print(lst_compre_exp)
 
  
-
-
-
 ##############################################################################
 # [exp for item in iterable (if conditional)]
 
@@ -65,7 +65,6 @@
 # for i in range(20):
 # 	if i % 2 != 0:
 # 		lst_.append(i)
-
 # print(lst_)	# [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 # lst_exp = [i for i in range(20) if i % 2 != 0]
@@ -90,6 +89,7 @@
 
 # b = [i for i in range(10) if i % 2 != 0]
 # print(b)
+
 # b = [i for i in range(10) if not i % 2]
 # print(b)
 
@@ -168,15 +168,15 @@
 # le = list(map(lambda i: i + 10, le)) 
 # # print(le)
 
-# data = list(map(int, input('').split()))
+# data = list(map(int, input('?').split()))
 # print(data)
 # print(le)
 
 # a = [1, 2, 5, 6, 7]
-# m_itog = list(map(lambda x: x ** 2, a )) # [1, 4, 25, 36, 49]
+# m_itog = list(map(lambda x: x ** 2, a ))
 # f_itog = list(filter(lambda x: x % 2 != 0, a))
-# print(m_itog)
-# print(f_itog)
+# print(m_itog)  # [1, 4, 25, 36, 49]
+# print(f_itog) # [1, 5, 7]
 #################################################################################
 ################################ zip ############################################
 # a = [i for i in range(10)]
@@ -196,7 +196,7 @@
 ######################## seminar 5 ##############################################
 #################################################################################
 
-# def f(a=None):
+# def f(a=None): 
 # 	if a is None:
 # 		a = []
 # 	a.append(len(a))	
@@ -238,4 +238,4 @@
 
 
 # 3. Дан список чисел. Создайте список, в который попадают числа, описываемые возрастающую последовательность.
-[1, 4, 5, 3, 6, 1, 7] => [1, 2, 3] or [1, 7] or [1, 5, 7]
+# [1, 4, 5, 3, 6, 1, 7] => [1, 2, 3] or [1, 7] or [1, 5, 7]
