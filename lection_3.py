@@ -35,9 +35,7 @@
 # y=lambda :2+3
 # print(y()) # 5
 
-lw = [4, 6, 1]
-exp =list([lambda i, b = 5: i*b for i in range(10)])
-print(exp) 
+
 
 
 ############################ list comprehension #############################
