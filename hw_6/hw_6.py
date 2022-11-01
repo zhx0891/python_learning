@@ -77,17 +77,12 @@ def optimized_4():
     third_list = [12.5, 34.09, 56.75, 78.28, 90.61, 98.4, 76.5, 54.9, 32.21, 1.81]
     # lst_map = [tuple(i.split('.')) for i in list(map(str, third_list))]
     lst_map = [third_list[i] - float(item[0]) for i, item in enumerate(tuple(i.split('.')) for i in list(map(str, third_list)))]
-    print(help(lst_map.sort))
-    
+    lst_map.sort()
+    return lst_map[len(lst_map) - 1] - lst_map[0]
 
 
 
-    # lst_spl = third_list.split(', ')
-    # lst_tup =  lst_spl]
-
-
-
-optimized_4()
+print(optimized_4())
     
 
 
