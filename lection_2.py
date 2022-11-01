@@ -1,4 +1,13 @@
 from time import sleep
+# кортежи
+# словари
+# множества
+# list comprehension
+# map
+# filter
+# zip
+# enumerate
+
 ######################################################## work with files ###############################	
 # a открытие для добавления данных
 # r открытие для чтения 
@@ -120,9 +129,9 @@ from time import sleep
 
 # Узнать, присутствует ли объект среди элементов кортежа, можно с помощью оператора in:
 
-song = ('Roses', 'are', 'Red')
-print('Red' in song)
-print('Violet' in song)
+# song = ('Roses', 'are', 'Red')
+# print('Red' in song) # True
+# print('Violet' in song) # False
  
 
 

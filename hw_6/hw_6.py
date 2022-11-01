@@ -45,12 +45,30 @@ def optimized_2(N):
 	
 
  	 
-print(optimized_2('675'))
-# first_task()
+# print(optimized_2('675'))
+
  	   
 
+
+# Напишите программу, которая найдёт произведение пар чисел списка.
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+
+def second_task():
+    sec_list = [12, 34, 56, 78, 90, 98, 76, 54, 32, 1]
+    half = int(len(sec_list) / 2)
+    for i in range(half):
+        print(f' {sec_list[i]} * {sec_list[(len(sec_list) - 1) - i]} = {sec_list[i] * sec_list[(len(sec_list) - 1) - i]}')
 	
 
+
+def optimized_3():
+	exp_list = [12, 34, 56, 78, 90, 98, 76, 54, 32, 1]
+	return [exp_list[i] * exp_list[(len(exp_list) - 1) - i] for i in range(len(exp_list) // 2)]
+	
+
+
+print(optimized_3())	
 
 
 	
