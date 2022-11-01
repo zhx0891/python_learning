@@ -22,35 +22,6 @@ def first_task():
     print(result)
 
 
-
-
-
-
-    # tmp = 0.0
-    # count = 1
-    # p = 0.0
-    # for i in range(2, reps):
-    #     p = (4 / (i * (i + 1) * (i + 2)))
-    #     if count % 2 == 0:
-    #         tmp = 3 + p
-    #     else:
-    #         tmp = 3 - p
-    #     count += 1
-    # print(tmp)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 2 Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
 def second_task(N):
