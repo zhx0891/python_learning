@@ -1,2 +1,7 @@
+import proxy as m
+
 def doit():
-    print('see')
+    with open('phonebook', 'r', encoding='utf-8') as book:
+        print(book.read())
+
+    m.itswork()
