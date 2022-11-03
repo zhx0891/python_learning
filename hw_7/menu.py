@@ -11,6 +11,7 @@ def action_choice():
 		if choice < 1 or choice > 5:
 			print('\n Одно дейсие  за раз, вариаты от 1 до 5')
 			action_choice()
+
 		elif choice == 2:
 			imp.doit()
 		elif choice == 1:
