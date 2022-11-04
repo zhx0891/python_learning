@@ -2,6 +2,7 @@
 def doit():
     import proxy as pro
     import exp_html as to_html
+    pro.clear()
     print('Как будем экспортировать?\n')
     print(' 1. TXT \n')
     print(' 2. HTML \n')
@@ -15,17 +16,18 @@ def doit():
         if choice < 1 or choice > 3:
             pro.dontwork()
         elif choice == 1:
-            print('TXT')
             with open('txt_book.txt', 'w', encoding='utf-8') as book:
                 book.write(buff)
+
+            input('Экспорт в TXT выполнен.Enter.')
             pro.itswork()
 
         elif choice == 2:
-            print('HTML')
             to_html.do_html(buff)
+            input('Экспорт в HTML выполнен.Enter.')
             pro.itswork()
         elif choice == 3:
-            print('CSV')
+            input('Экспорт в CSV выполнен.Enter.')
             pro.itswork()
 
     else:

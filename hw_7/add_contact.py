@@ -1,4 +1,4 @@
-import proxy as m
+import proxy as pro
 
 
 def doit():
@@ -12,8 +12,9 @@ def doit():
         book.write(f'{phone} \n')
         book.write(f'{comment} \n')
         book.write(f'\n')
-
-    m.itswork()
+    input('Запись добавлена. Нажмите Enter.')
+    pro.clear()
+    pro.itswork()
 
 
 

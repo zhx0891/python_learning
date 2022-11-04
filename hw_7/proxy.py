@@ -1,11 +1,15 @@
 
 def itswork():
     import menu
-    print('Сделано!')
+    clear()
     menu.action_choice()
 
 
 def dontwork():
     import menu
-    print('Ошибка ввода. Хороший тестировщик.')
+    clear()
+    print('Ошибка ввода. Моё почтение, сэр тэстэр.')
     menu.action_choice()
+
+def clear():
+    print('\n' * 100)

@@ -6,4 +6,3 @@ def do_html(file):
 		book.write(f'<p> {file} </p>')
 		book.write('</body>\n</html>')
 
-	menu.action_choice()
