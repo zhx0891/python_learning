@@ -23,11 +23,10 @@ def doit():
             pro.itswork()
 
         elif choice == 2:
-            to_html.do_html(buff)
-            input('Экспорт в HTML выполнен.Enter.')
+            to_html.do_html()
             pro.itswork()
         elif choice == 3:
-            input('Экспорт в CSV выполнен.Enter.')
+            input('Экспорт в CSV не выполнен.Enter.')
             pro.itswork()
 
     else:
