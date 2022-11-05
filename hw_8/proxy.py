@@ -4,3 +4,6 @@ def clean():
 def action_choice():
     import start as st
     st.action_choice()
+
+def test():
+    input('?')

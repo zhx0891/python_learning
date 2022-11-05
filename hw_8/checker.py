@@ -12,4 +12,3 @@ def check_action(choice, min, max, action, action2):
 def test():
     print('!!')
 
-# check_action('1', 1, 3,test, test)

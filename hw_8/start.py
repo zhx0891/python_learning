@@ -1,6 +1,8 @@
+import checker as check
+
 def action_choice():
-    import checker as check
     import authorization as au
+
     print(f'Коллектив компании "TrueLogistik" приветствует вас \n\n 1. Авторизация. \n 2. Новый клиент. \n 3. Выход.\n\n'
           f'Выберите номер действия  и нажмите ENTER  ')
     choice = check.check_action(input('\nдействие №:'), 1, 3, action_choice, action_choice)
