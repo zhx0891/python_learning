@@ -6,4 +6,4 @@ def readit(file):
 
     return pwd
 
-readit('users')
+
