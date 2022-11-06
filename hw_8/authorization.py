@@ -29,10 +29,10 @@ def auth():
                     inter.boss(login)
                     break
                 elif i[3] == 1:
-                    inter.driver()
+                    inter.driver(login)
                     break
                 elif i[3] == 2:
-                    inter.client()
+                    inter.client(login)
                     break
             else:
                 error()

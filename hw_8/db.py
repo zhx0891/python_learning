@@ -15,6 +15,15 @@ def writeuser(name, passw, stat = '2'):
         book.write(f'{passw}\n')
         book.write(stat)
 
+def write_order(login):
+    client = login
+    address = input('Введите адрес отправления:  ')
+    destinat = input('Введите адрес назначения:  ')
+    cargo = input('Вид груза:  ')
+    stat = 'размещён'
+    with open('orders', 'a', encoding='utf-8') as book:
+        book.write(f'{client}|{address}|{destinat}|{cargo}|{stat}')
+
 
 # test = readit('users')
 # print([list(map(lambda x: print(f'id:{x[0]} login: {x[1]}\n'),(filter(lambda i: i[3] == 1,readit('users')))))])

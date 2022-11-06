@@ -34,4 +34,15 @@ def driver(login):
 
 
 def client(login):
-    choice = input(f'Здравствуйте {login}\n\n  1. Разместить заказ.\n  2. Статус моих заказов.\n\nВаш выбор: ')
+    choice = input(f'Здравствуйте {login}\n\n  1. Разместить заказ.\n  2. Статус моих заказов.\n  3. Выход.\n\nВаш выбор: ')
+    choice = check.check_action(choice, 1, 5, client, client)
+    if choice == 1:
+        print('Разместить заказ.')
+        db.write_order(login)
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        client(login)
+    elif choice == 2:
+        print('Статус  заказов.')
+    elif choice == 3:
+        quit()
