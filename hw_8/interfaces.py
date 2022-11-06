@@ -44,5 +44,9 @@ def client(login):
         client(login)
     elif choice == 2:
         print('Статус  заказов.')
+        print(list(map(lambda y: print(f'из:  {y[1]} в: {y[2]} груз: {y[3]}  статус: {y[4]} \n'),(filter(lambda x: x[0] == login,db.read_order())))))
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        client(login)
     elif choice == 3:
         quit()
