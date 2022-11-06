@@ -2,7 +2,7 @@ import checker as check
 
 def action_choice():
     import authorization as au
-    import registration as reg
+
 
     print(f'Коллектив компании "TrueLogistik" приветствует вас \n\n 1. Авторизация. \n 2. Новый клиент. \n 3. Выход.\n\n'
           f'Выберите номер действия  и нажмите ENTER  ')
