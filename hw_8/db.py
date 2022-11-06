@@ -32,11 +32,11 @@ def read_order():
 
 
 
-read_order()
+# print(read_order())
 
 # test = readit('users')
 # print([list(map(lambda x: print(f'id:{x[0]} login: {x[1]}\n'),(filter(lambda i: i[3] == 1,readit('users')))))])
 
-
-
+# print(list(map(lambda y: print(f'из:  {y[1]} в: {y[2]} груз: {y[3]}  статус: {y[4]} \n'),(filter(lambda x: x[0] == 'ЖуковВ', read_order())))))
+# print(list((filter(lambda x: x[0] == 'ЖуковВ', read_order()))))
 

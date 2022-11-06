@@ -7,3 +7,4 @@ def action_choice():
 
 def test():
     input('?')
+
