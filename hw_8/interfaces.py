@@ -1,6 +1,7 @@
 import checker as check
 import proxy as pro
 import db
+import viewer as vi
 def boss(login = 'boss'):
     import registration as reg
     choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Смотреть маршруты.\n  3. Смотреть водителей.\n'
@@ -30,7 +31,23 @@ def boss(login = 'boss'):
 
 
 def driver(login):
-    choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Взять заказ.\n  3. Мои  маршруты.\n\nВаш выбор: ')
+    choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Взять заказ.\n  3. Мои  маршруты.\n  4. Выход.\n\nВаш выбор: ')
+    choice = check.check_action(choice, 1, 5, driver, driver)
+    if choice == 1:
+        print('Смотреть заказы.\n\n')
+        max = vi.view_orders_drivers()
+        choice = input('Выберите заказ или нажмите Enter для отказа. Заказ: ')
+        choice = check.check_action(choice, 1, max, driver, driver)
+        
+
+        # e = list(map(lambda x: print(f'клиент: {x[0]} из: {x[1]} в: {x[2]} груз: {x[3]} статус: {x[4]}'), db.read_order()))
+
+    elif choice == 2:
+        print('Взять заказ.\n\n')
+    elif choice == 3:
+        print('Мои маршруты.\n\n')
+    elif choice == 2:
+        quit()
 
 
 def client(login):
@@ -52,4 +69,4 @@ def client(login):
         quit()
 
 
-boss("boss")
+driver('test')
