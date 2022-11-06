@@ -16,7 +16,6 @@ def writeuser(name, passw, stat = '2'):
         book.write(stat)
 
 def write_order(login):
-    # count =
     client = login
     address = input('Введите адрес отправления:  ')
     destinat = input('Введите адрес назначения:  ')
@@ -40,6 +39,20 @@ def view_orders_drivers():
         count += 1
     return count
 
+def add_route(login, id):
+
+    order = filter(lambda x: x[0] == id, read_order())
+    print(read_order())
+    # print(len(order))
+    print(order)
+    # rt = f'Заказ №: {order[0]} из: {order[2]} в: {order[3]} груз: {order[4]} статус: исполняется водителем {login}'
+    #
+    # with open('routes', 'a', encoding='utf-8') as route:
+    #     route.write(rt)
+
+
+
+add_route('test', '1')
 # print(read_order())
 
 # test = readit('users')
