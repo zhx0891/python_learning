@@ -1,5 +1,6 @@
 import proxy as pro
 import checker as check
+import interfaces as inter
 def error():
     choice = input(
         'Не правильный  пользователь или пароль, чтобы попробовать снова  нажмите 1, чтобы вернуться на главную  нажмите 2,\n'
@@ -24,14 +25,14 @@ def auth():
             if password == i[2]:
                 authorized = 1
                 if i[3] == 0:
-                    print('руководитель')
-                    pro.test()
+                    pro.clean()
+                    inter.boss(login)
                     break
                 elif i[3] == 1:
-                    print('водитель')
+                    inter.driver()
                     break
                 elif i[3] == 2:
-                    print('клиент')
+                    inter.client()
                     break
             else:
                 error()
