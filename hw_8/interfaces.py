@@ -1,6 +1,32 @@
-def boss(login):
-    choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Смотреть маршруты.\n  3. Комната спокойствия.\n  4. Добавить водителя.\n\n'
-                   'Ваш выбор: ')
+import checker as check
+import proxy as pro
+import db
+def boss(login = 'boss'):
+    import registration as reg
+    choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Смотреть маршруты.\n  3. Смотреть водителей.\n'
+                   f'  4. Добавить водителя.\n  5. Выйти\n\nВаш выбор: ')
+    choice = check.check_action(choice, 1, 5, boss, boss)
+    if choice == 1:
+        print('Смотреть заказы.')
+    elif choice == 2:
+        print('Смотреть маршруты.')
+    elif choice == 3:
+        print('Смотреть водителей.\n')
+        print([list(map(lambda x: print(f'id:{x[0]} login: {x[1]}\n'),(filter(lambda i: i[3] == 1,db.readit('users')))))])
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        boss(login)
+
+    elif choice == 4:
+        print('Добавить водителя')
+        reg.new_user('1')
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        boss(login)
+
+    elif choice == 5:
+        quit()
+
 
 
 def driver(login):
