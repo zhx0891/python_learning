@@ -24,15 +24,21 @@ def write_order(login):
     stat = 'размещён'
     count = len(read_order())
     with open('orders', 'a', encoding='utf-8') as order:
-        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}\n\n')
+        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}')
 
 def read_order():
     with open('orders', 'r', encoding='utf-8') as order:
         # ord = (order.read()).split('\n\n')
-        return list(map(lambda x: x.split('|'), (order.read()).split('\n\n')))
+        return list(map(lambda x: x.split('|'), (order.read()).split('\n')))
         # ord = list(filter(lambda x: x[0] == login, (map(lambda x: x.split('|'), (order.read()).split('\n\n')))))
 
-
+def view_orders_drivers():
+    orders = read_order()
+    count = 1
+    for x in orders:
+        print(f'Заказ №: {x[0]} из: {x[2]} в: {x[3]} груз: {x[4]} статус: {x[5]}')
+        count += 1
+    return count
 
 # print(read_order())
 
@@ -42,4 +48,5 @@ def read_order():
 # print(list(map(lambda y: print(f'из:  {y[1]} в: {y[2]} груз: {y[3]}  статус: {y[4]} \n'),(filter(lambda x: x[0] == 'ЖуковВ', read_order())))))
 # print(list((filter(lambda x: x[0] == 'ЖуковВ', read_order()))))
 
-write_order('test')
+# write_order('test')
+# print(read_order())
