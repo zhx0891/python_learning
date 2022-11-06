@@ -16,13 +16,15 @@ def writeuser(name, passw, stat = '2'):
         book.write(stat)
 
 def write_order(login):
+    # count =
     client = login
     address = input('Введите адрес отправления:  ')
     destinat = input('Введите адрес назначения:  ')
     cargo = input('Вид груза:  ')
     stat = 'размещён'
+    count = len(read_order())
     with open('orders', 'a', encoding='utf-8') as order:
-        order.write(f'{client}|{address}|{destinat}|{cargo}|{stat}\n\n')
+        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}\n\n')
 
 def read_order():
     with open('orders', 'r', encoding='utf-8') as order:
@@ -40,3 +42,4 @@ def read_order():
 # print(list(map(lambda y: print(f'из:  {y[1]} в: {y[2]} груз: {y[3]}  статус: {y[4]} \n'),(filter(lambda x: x[0] == 'ЖуковВ', read_order())))))
 # print(list((filter(lambda x: x[0] == 'ЖуковВ', read_order()))))
 
+write_order('test')
