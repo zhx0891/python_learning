@@ -41,14 +41,13 @@ def view_orders_drivers():
 
 def add_route(login, id):
 
-    order = filter(lambda x: x[0] == id, read_order())
-    print(read_order())
-    # print(len(order))
-    print(order)
-    # rt = f'Заказ №: {order[0]} из: {order[2]} в: {order[3]} груз: {order[4]} статус: исполняется водителем {login}'
-    #
-    # with open('routes', 'a', encoding='utf-8') as route:
-    #     route.write(rt)
+    order = list(filter(lambda x: x[0] == id, read_order()))
+    order = order[0]
+
+    rt = f'Заказ №: {order[0]} из: {order[2]} в: {order[3]} груз: {order[4]} статус: исполняется водителем {login}'
+    print(rt)
+    with open('routes', 'a', encoding='utf-8') as route:
+        route.write(rt)
 
 
 
