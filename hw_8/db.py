@@ -50,8 +50,31 @@ def add_route(login, id):
         route.write(rt)
 
 
+def change_order(n):
+    with open('orders', 'r', encoding='utf-8') as order:
+        ord = order.readlines()
 
-add_route('test', '1')
+    with open('orders', 'w', encoding='utf-8') as order:
+        for ind, item  in enumerate(ord):
+            e = item.split('|')
+            # print(e)
+            if e[0] == n:
+                line = ind
+                # print(len(e))
+                order.write(f'{e[0]}|{e[1]}|{e[2]}|{e[3]}|{e[4]}|в работе')
+            else:
+                order.write(f'{e[0]}|{e[1]}|{e[2]}|{e[3]}|{e[4]}|{e[5]}')
+
+
+
+
+
+
+
+
+
+change_order('10')
+# add_route('test', '1')
 # print(read_order())
 
 # test = readit('users')
