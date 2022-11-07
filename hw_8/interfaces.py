@@ -6,7 +6,7 @@ def boss(login = 'boss'):
     import registration as reg
     choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Смотреть маршруты.\n  3. Смотреть водителей.\n'
                    f'  4. Добавить водителя.\n  5. Выйти\n\nВаш выбор: ')
-    choice = check.check_action(choice, 1, 5, boss, boss)
+    choice = check.check_action(choice, 1, 5, boss, boss, login)
     if choice == 1:
         print('Смотреть заказы.\n\n')
         db.view_orders_drivers()
@@ -37,27 +37,26 @@ def boss(login = 'boss'):
 
 def driver(login):
     choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Взять заказ.\n  3. Мои  маршруты.\n  4. Выход.\n\nВаш выбор: ')
-    choice = check.check_action(choice, 1, 5, driver, driver)
+    choice = check.check_action(choice, 1, 5, driver, driver,login)
     if choice == 1:
         print('Смотреть заказы.\n\n')
         max = db.view_orders_drivers()
         choice = input('Выберите заказ или нажмите Enter для отказа. Заказ: ')
-        choice = check.check_action(choice, 1, max, driver, driver)
-
-
+        choice = check.check_action(choice, 1, max, driver, driver, login)
+        db.add_route(login, choice)
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        driver(login)
         # e = list(map(lambda x: print(f'клиент: {x[0]} из: {x[1]} в: {x[2]} груз: {x[3]} статус: {x[4]}'), db.read_order()))
-
-    elif choice == 2:
-        print('Взять заказ.\n\n')
     elif choice == 3:
         print('Мои маршруты.\n\n')
-    elif choice == 2:
+    elif choice == 4:
         quit()
 
 
 def client(login):
     choice = input(f'Здравствуйте {login}\n\n  1. Разместить заказ.\n  2. Статус моих заказов.\n  3. Выход.\n\nВаш выбор: ')
-    choice = check.check_action(choice, 1, 5, client, client)
+    choice = check.check_action(choice, 1, 5, client, client, login)
     if choice == 1:
         print('Разместить заказ.')
         db.write_order(login)

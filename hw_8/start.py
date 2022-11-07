@@ -7,7 +7,7 @@ def action_choice():
 
     print(f'Коллектив компании "TrueLogistik" приветствует вас \n\n 1. Авторизация. \n 2. Новый клиент. \n 3. Выход.\n\n'
           f'Выберите номер действия  и нажмите ENTER  ')
-    choice = check.check_action(input('\nдействие №:'), 1, 3, action_choice, action_choice)
+    choice = check.check_action(input('\nдействие №:'), 1, 3, action_choice, action_choice, 'login')
     if choice == 1:
         au.auth()
     elif choice == 2:

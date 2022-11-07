@@ -21,15 +21,17 @@ def write_order(login):
     destinat = input('Введите адрес назначения:  ')
     cargo = input('Вид груза:  ')
     stat = 'размещён'
-    count = len(read_order())
+    count = len(read_order()) + 1
     with open('orders', 'a', encoding='utf-8') as order:
-        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}')
+        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}\n')
 
 def read_order():
     with open('orders', 'r', encoding='utf-8') as order:
-        # ord = (order.read()).split('\n\n')
-        return list(map(lambda x: x.split('|'), (order.read()).split('\n')))
-        # ord = list(filter(lambda x: x[0] == login, (map(lambda x: x.split('|'), (order.read()).split('\n\n')))))
+        # return (order.read()).split('\n\n')
+        e = list(map(lambda x: x.split('|'), (order.read()).split('\n')))
+        e.pop()
+        return e
+        # return list(filter(lambda x: x[0] == login, (map(lambda x: x.split('|'), (order.read()).split('\n\n')))))
 
 def view_orders_drivers():
     orders = read_order()
@@ -43,11 +45,12 @@ def add_route(login, id):
 
     order = list(filter(lambda x: x[0] == id, read_order()))
     order = order[0]
-
     rt = f'Заказ №: {order[0]} из: {order[2]} в: {order[3]} груз: {order[4]} статус: исполняется водителем {login}'
-    print(rt)
+
+    change_order(order[0])
     with open('routes', 'a', encoding='utf-8') as route:
         route.write(rt)
+
 
 
 def change_order(n):
@@ -55,13 +58,10 @@ def change_order(n):
         ord = order.readlines()
 
     with open('orders', 'w', encoding='utf-8') as order:
-        for ind, item  in enumerate(ord):
+        for ind, item in enumerate(ord):
             e = item.split('|')
-            # print(e)
             if e[0] == n:
-                line = ind
-                # print(len(e))
-                order.write(f'{e[0]}|{e[1]}|{e[2]}|{e[3]}|{e[4]}|в работе')
+                order.write(f'{e[0]}|{e[1]}|{e[2]}|{e[3]}|{e[4]}|в работе\n')
             else:
                 order.write(f'{e[0]}|{e[1]}|{e[2]}|{e[3]}|{e[4]}|{e[5]}')
 
@@ -73,7 +73,7 @@ def change_order(n):
 
 
 
-change_order('10')
+# change_order('10')
 # add_route('test', '1')
 # print(read_order())
 
