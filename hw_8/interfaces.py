@@ -10,28 +10,24 @@ def boss(login = 'boss'):
     if choice == 1:
         print('Смотреть заказы.\n\n')
         db.view_orders_drivers()
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         boss(login)
 
     elif choice == 2:
         print('Смотреть маршруты.')
         db.read_routes()
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         boss(login)
     elif choice == 3:
         print('Смотреть водителей.\n')
         e = [list(map(lambda x: print(f'id:{x[0]} login: {x[1]}\n'),(filter(lambda i: i[3] == 1,db.readit('users')))))]
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         boss(login)
 
     elif choice == 4:
         print('Добавить водителя')
         reg.new_user('1')
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         boss(login)
 
     elif choice == 5:
@@ -48,13 +44,11 @@ def driver(login):
         choice = input('Выберите заказ или нажмите Enter для отказа. Заказ: ')
         choice = check.check_action(choice, 1, max, driver, driver, login)
         db.add_route(login, choice)
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         driver(login)
     elif choice == 2:
         db.read_routes()
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         driver(login)
     elif choice == 3:
         quit()
@@ -66,17 +60,18 @@ def client(login):
     if choice == 1:
         print('Разместить заказ.')
         db.write_order(login)
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         client(login)
     elif choice == 2:
         print('Статус  заказов.')
         e = list(map(lambda y: print(f'из:  {y[2]} в: {y[3]} груз: {y[4]}  статус: {y[5]} \n'),(filter(lambda x: x[1] == login, db.read_order()))))
-        input('Готово. для продолжения Enter')
-        pro.clean()
+        ok()
         client(login)
     elif choice == 3:
         quit()
 
+def ok():
+    input('Готово. для продолжения Enter')
+    pro.clean()
 
 # driver('test')

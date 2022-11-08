@@ -48,20 +48,11 @@ def add_route(login, id):
     id = str(id)
     order = list(filter(lambda x: x[0] == id, read_order()))
     ord = order[0]
-
-    # ord = []                                                   о
-    # for i in read_order():
-    #     if i[0] == id:
-    #         for j in range(len(i) - 1):
-    #             ord.append(i[j])
     rt = f'Заказ №: {ord[0]} из: {ord[2]} в: {ord[3]} груз: {ord[4]} статус: исполняется водителем {login}'
-    #
     change_order(ord[0])
     with open('routes', 'r', encoding='utf-8') as route:
         len_ = route.read().split('\n')
         len_ = len(len_)
-        # print(len_)
-        # print(len(len_)-1)
 
 
     with open('routes', 'a', encoding='utf-8') as route:
@@ -69,8 +60,6 @@ def add_route(login, id):
             route.write('\n')
 
         route.write(rt)
-
-
 
 
 def change_order(n):
