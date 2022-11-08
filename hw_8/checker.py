@@ -1,4 +1,4 @@
-def check_action(choice, min, max, action, action2, login ='anonymous'):
+def check_action(choice, min, max, action, action2, login='anonymous'):
     if choice.isdigit():
         choice = int(choice)
         if choice < min or choice > max:
@@ -9,6 +9,4 @@ def check_action(choice, min, max, action, action2, login ='anonymous'):
     else:
         action2(login)
 
-def test():
-    print('!!')
 

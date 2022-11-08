@@ -16,6 +16,10 @@ def boss(login = 'boss'):
 
     elif choice == 2:
         print('Смотреть маршруты.')
+        db.read_routes()
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        boss(login)
     elif choice == 3:
         print('Смотреть водителей.\n')
         e = [list(map(lambda x: print(f'id:{x[0]} login: {x[1]}\n'),(filter(lambda i: i[3] == 1,db.readit('users')))))]
@@ -36,7 +40,7 @@ def boss(login = 'boss'):
 
 
 def driver(login):
-    choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Взять заказ.\n  3. Мои  маршруты.\n  4. Выход.\n\nВаш выбор: ')
+    choice = input(f'Здравствуйте {login}\n\n  1. Смотреть заказы.\n  2. Смотреть маршруты.\n  3. Выход.\n\nВаш выбор: ')
     choice = check.check_action(choice, 1, 5, driver, driver,login)
     if choice == 1:
         print('Смотреть заказы.\n\n')
@@ -47,10 +51,12 @@ def driver(login):
         input('Готово. для продолжения Enter')
         pro.clean()
         driver(login)
-        # e = list(map(lambda x: print(f'клиент: {x[0]} из: {x[1]} в: {x[2]} груз: {x[3]} статус: {x[4]}'), db.read_order()))
+    elif choice == 2:
+        db.read_routes()
+        input('Готово. для продолжения Enter')
+        pro.clean()
+        driver(login)
     elif choice == 3:
-        print('Мои маршруты.\n\n')
-    elif choice == 4:
         quit()
 
 

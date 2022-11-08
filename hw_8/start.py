@@ -1,6 +1,6 @@
 import checker as check
 
-def action_choice():
+def action_choice(login):
     import authorization as au
     import registration as reg
 
@@ -21,6 +21,6 @@ def action_choice():
 
 
 
-action_choice()
+action_choice('Гость')
 
 

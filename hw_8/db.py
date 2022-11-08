@@ -23,13 +23,15 @@ def write_order(login):
     stat = 'размещён'
     count = len(read_order()) + 1
     with open('orders', 'a', encoding='utf-8') as order:
-        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}\n')
+        if count > 0:
+            order.write('\n')
+        order.write(f'{count}|{client}|{address}|{destinat}|{cargo}|{stat}')
 
 def read_order():
     with open('orders', 'r', encoding='utf-8') as order:
         # return (order.read()).split('\n\n')
         e = list(map(lambda x: x.split('|'), (order.read()).split('\n')))
-        e.pop()
+        # e.pop()
         return e
         # return list(filter(lambda x: x[0] == login, (map(lambda x: x.split('|'), (order.read()).split('\n\n')))))
 
@@ -43,13 +45,31 @@ def view_orders_drivers():
 
 def add_route(login, id):
 
+    id = str(id)
     order = list(filter(lambda x: x[0] == id, read_order()))
-    order = order[0]
-    rt = f'Заказ №: {order[0]} из: {order[2]} в: {order[3]} груз: {order[4]} статус: исполняется водителем {login}'
+    ord = order[0]
 
-    change_order(order[0])
+    # ord = []                                                   о
+    # for i in read_order():
+    #     if i[0] == id:
+    #         for j in range(len(i) - 1):
+    #             ord.append(i[j])
+    rt = f'Заказ №: {ord[0]} из: {ord[2]} в: {ord[3]} груз: {ord[4]} статус: исполняется водителем {login}'
+    #
+    change_order(ord[0])
+    with open('routes', 'r', encoding='utf-8') as route:
+        len_ = route.read().split('\n')
+        len_ = len(len_)
+        # print(len_)
+        # print(len(len_)-1)
+
+
     with open('routes', 'a', encoding='utf-8') as route:
+        if len_ > 0:
+            route.write('\n')
+
         route.write(rt)
+
 
 
 
@@ -66,15 +86,19 @@ def change_order(n):
                 order.write(f'{e[0]}|{e[1]}|{e[2]}|{e[3]}|{e[4]}|{e[5]}')
 
 
+def read_routes():
+    with open('routes', 'r', encoding='utf-8') as route:
+        rt = route.read()
+        print(rt)
 
 
 
 
 
 
-
+# read_routes()
 # change_order('10')
-# add_route('test', '1')
+# add_route('test', 1)
 # print(read_order())
 
 # test = readit('users')
