@@ -4,7 +4,7 @@ bot = TeleBot('5498732265:AAHE1PuQe_8EyDLBpxnSAIpHzCHoErOIoFU')
 
 def summ(text):
     lst = text.split()
-    if lst[0].isdigit() and lst[1].isdigit():
+    if len(lst) == 2 and lst[0].isdigit() and lst[1].isdigit():
         return str(int(lst[0]) + int(lst[1]))
     return 'не корректный запрос'
 
