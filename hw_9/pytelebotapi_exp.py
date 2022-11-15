@@ -10,8 +10,19 @@ def help(message):
 
 def user_answer(message):
     if message.text == "да":
-        msg = bot.send_message(message.chat.id,text= " да или нет? ")
+        msg = bot.send_message(message.chat.id, " Что у тебя есть? ")
         bot.register_next_step_handler(msg, user_reg)
+    elif message == "нет":
+        bot.send_message(message.chat.id, "нет? ")
+    else:
+        bot.send_message(message.chat.id, " Што?) ")
+
+
+def user_reg(message):
+    bot.send_message(message.chat.id, f" Только {message.text} ??? ")
+
+
+
 
 
 
