@@ -41,7 +41,7 @@ def optimized_1(N, a, b):
 def optimized_2(N):
 	lst_ = [i for i in N]
 	num = list(map(int, lst_))
-	sum =0
+	sum = 0
 	for i in num:
 		sum += i
 	return sum
