@@ -11,22 +11,22 @@ def summ(text):
 
 
 
-@bot.message_handler(commands=['log'])
-def echo(msg: telebot.types.Message):
-    bot.send_message(chat_id=msg.from_user.id, text='Лог программы \n ffffffffffffff')
-    bot.send_document(chat_id=msg.from_user.id, document=open('TestBot.log', 'rb'))
+# @bot.message_handler(commands=['log'])
+# def echo(msg: telebot.types.Message):
+#     bot.send_message(chat_id=msg.from_user.id, text='Лог программы \n ffffffffffffff')
+#     bot.send_document(chat_id=msg.from_user.id, document=open('TestBot.log', 'rb'))
 
-@bot.message_handler(content_types=['document'])
-def echo(msg: telebot.types.Message):
-    file = bot.get_file(msg.document.file_id)
-    downloaded_file = bot.download_file(file.file_path)
-    with open((msg.document.file_name, 'wb')) as f_out:
-        f_out.write(downloaded_file)
+# @bot.message_handler(content_types=['document'])
+# def echo(msg: telebot.types.Message):
+#     file = bot.get_file(msg.document.file_id)
+#     downloaded_file = bot.download_file(file.file_path)
+#     with open((msg.document.file_name, 'wb')) as f_out:
+#         f_out.write(downloaded_file)
 
 
 @bot.message_handler(commands=['help'])
 def help_comm(msg: telebot.types.Message):
-    bot.send_message(chat_id=msg.from_user.id, text='Справка')
+    bot.send_message(chat_id=msg.from_user.id, text='/calc  - калькулятор')
 
 @bot.message_handler()
 def echo(msg: telebot.types.Message):
