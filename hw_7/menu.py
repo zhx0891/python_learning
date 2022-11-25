@@ -31,3 +31,17 @@ def action_choice():
 
 
 action_choice()
+
+matr = [['. ','. ','. ','. '],
+        ['. ','. ','. ','. '],
+        ['. ','. ','. ','. '],
+        ['. ','. ','. ','. ']]
+
+for i in matr:
+	print()
+	for j in i:
+		print(j, end='')
+for i in matr:
+	
+
+print('\n' * 3)		
