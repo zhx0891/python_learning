@@ -1,3 +1,11 @@
+def only_digit(tmp):
+    digit = ''
+    for i in tmp:
+        if i.isdigit():
+            digit += i
+    return int(digit)
+
+
 def calc(str_):
     str_spl = str_.split()
     print(len(str_spl))
@@ -26,8 +34,28 @@ def calc(str_):
 def complex_calc(lst_):
     if len(lst_) == 7:
         if(((lst_[0].split())[0])[0]) == '-':
-            
-        # print('ok')
+            tmp = ((lst_[0].split())[0])
+            a1 = only_digit(tmp) * -1
+            print(a1)
+        else:
+            a1 = int(lst_[0])
+
+        a2 = int(lst_[4])
+        b1 = only_digit(lst_[2])
+        if lst_[1] == '-':
+            b1 *= -1
+        b2 = only_digit(lst_[6])
+        if lst_[5] == '-':
+            b2 *= -1
+        act1 = lst_[1]
+        act2 = lst_[3]
+        act3 = lst_[5]
+
+
+
+
+
+
 
     else:
         print('wtf?')
@@ -39,6 +67,6 @@ def complex_calc(lst_):
 
 
 test = '-34 + 65i - 21 + 67i'.split()
-print(test)
+# print(only_digit('34i'))
 complex_calc(test)
 # calc("6 + 5")
