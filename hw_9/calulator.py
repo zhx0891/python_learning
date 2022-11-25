@@ -36,7 +36,6 @@ def complex_calc(lst_):
         if(((lst_[0].split())[0])[0]) == '-':
             tmp = ((lst_[0].split())[0])
             a1 = only_digit(tmp) * -1
-            print(a1)
         else:
             a1 = int(lst_[0])
 
@@ -51,20 +50,24 @@ def complex_calc(lst_):
         act2 = lst_[3]
         act3 = lst_[5]
 
+        if act2 == "+":
+            c = b1 + b2
+            if c > 0:
+                print(f'{a1 + a2}+{c}i')
+            else:
+                print(f'{a1 + a2}{c}i')
 
-
-
+        if act2 == '-':
+            c = b1 - b2
+            if c > 0:
+                print(f'{a1 - a2}-{c}i')
+            else:
+                print(f'{a1 - a2}+{c * -1}i')
 
 
 
     else:
         print('wtf?')
-
-
-
-
-
-
 
 test = '-34 + 65i - 21 + 67i'.split()
 # print(only_digit('34i'))
