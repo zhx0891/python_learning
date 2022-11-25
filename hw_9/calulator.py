@@ -63,13 +63,9 @@ def complex_calc(lst_):
                 print(f'{a1 - a2}-{c}i')
             else:
                 print(f'{a1 - a2}+{c * -1}i')
-
-
-
     else:
         print('wtf?')
 
+
 test = '-34 + 65i - 21 + 67i'.split()
-# print(only_digit('34i'))
 complex_calc(test)
-# calc("6 + 5")
