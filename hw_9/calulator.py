@@ -8,27 +8,26 @@ def only_digit(tmp):
 
 def calc(str_):
     str_spl = str_.split()
-    print(len(str_spl))
     if len(str_spl) < 4:
         if str_spl[0].isdigit() and str_spl[2].isdigit():
             a = int(str_spl[0])
             b = int(str_spl[2])
             action = str_spl[1]
             if action == '+':
-                print(f"{a} + {b} = {a + b}")
+                return f"{a} + {b} = {a + b}"
             elif action == '-':
-                print(f"{a} - {b} = {a - b}")
+                return f"{a} - {b} = {a - b}"
             elif action == '*':
-                print(f"{a} * {b} = {a * b}")
+                return f"{a} * {b} = {a * b}"
             elif action == '/':
-                print(f"{a} / {b} = {a / b}")
+                return f"{a} / {b} = {a / b}"
             else:
-                print('некорректное действие')
+                return'некорректное действие'
         else:
-            print("Некорректный ввод")
+            return "Некорректный ввод"
     else:
-        print('complex_calc')
-        # complex_calc(str_spl)
+        # return str_spl
+        return complex_calc(str_spl)
 
 
 def complex_calc(lst_):
@@ -53,19 +52,21 @@ def complex_calc(lst_):
         if act2 == "+":
             c = b1 + b2
             if c > 0:
-                print(f'{a1 + a2}+{c}i')
+                return f'{a1 + a2}+{c}i'
             else:
-                print(f'{a1 + a2}{c}i')
+                return f'{a1 + a2}{c}i'
 
         if act2 == '-':
             c = b1 - b2
             if c > 0:
-                print(f'{a1 - a2}-{c}i')
+                return f'{a1 - a2}-{c}i'
             else:
-                print(f'{a1 - a2}+{c * -1}i')
+                return f'{a1 - a2}+{c * -1}i'
     else:
-        print('wtf?')
+        return 'wtf?'
 
 
-test = '-34 + 65i - 21 + 67i'.split()
-complex_calc(test)
+# test = '-34 + 65i - 21 + 67i'.split()
+# complex_calc(test)
+# calc('-34 + 65i - 21 + 67i')
+print(calc("5 + 4i - 6 + 9i"))
